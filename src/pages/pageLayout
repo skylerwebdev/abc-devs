@@ -1,0 +1,17 @@
+        <div className="pageMain">
+            <div className="pageTop">
+                <div className="ptLt"></div>
+                <div className="ptCt"></div>
+                <div className="ptRt"></div>
+            </div>
+            <div className="pageMid">
+                <div className="pmLt"></div>
+                <div className="pmCt"></div>
+                <div className="pmRt"></div>
+            </div>
+            <div className="pageBot">
+                <div className="pbLt"></div>
+                <div className="pbCt"></div>
+                <div className="pbRt"></div>
+            </div>
+        </div>

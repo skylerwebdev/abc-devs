@@ -21,7 +21,7 @@ const NavBar = () => {
     return (
         <div className={open && size.width < 768 ?"mN full":"mN"}>
             <div className="nLt">
-            <span className="open nL"  onClick={shownav}>Open Nav Container</span>
+            <span className="open nL"  onClick={shownav}>ABC >= Devs</span>
             <p>{size.width}</p>
             </div>
             <div className={!open || size.width > 768 ? "nCt hidden" : "nCt"}>

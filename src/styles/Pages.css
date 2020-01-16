@@ -1,0 +1,51 @@
+/* 
+
+    font-family: 'Fira Code', monospace;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Ubuntu', sans-serif;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+ */
+.pageMain{
+    
+}
+.pageTop{
+    display: flex;
+    flex-direction: row;
+}
+.ptLt{
+    flex-shrink: 8;
+    text-align: left;
+}
+.ptCt{
+    flex-grow: 1;
+}
+.ptRt{
+    flex-grow: 1;
+}
+.pageMid{
+    display: flex;
+    flex-direction: row;
+}
+.pmLt, .pmRt{
+    flex-grow: 1;
+}
+.pmCt{
+    flex-grow: 2;
+}
+.pageBot{
+    display: flex;
+    flex-direction: row;
+}
+.pbLt, .pbCt{
+    flex-grow: 1;
+}
+.pbRt{
+    flex-grow: 2;
+}
+@media screen and (min-width: 768px){
+
+}
