@@ -1,0 +1,47 @@
+.mN{
+    display: flex;
+    flex-direction: column;
+}
+.nL{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+.hidden{
+    display: none;
+}
+@media screen and (min-width: 768px) {
+.mN{
+    background-color: rebeccapurple;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.nCt, .nRt, .nLt {
+    display: flex;
+    flex-direction: row;
+}
+.nCt{
+    flex-grow: 2;
+    justify-content: center;
+}
+.nRt, .nLt{
+    flex-grow: 1;
+}
+.nRt{
+    margin-right: 1rem;
+    justify-content: flex-end;
+}
+.nLt{
+    margin-left: 1rem;
+}
+.nL{
+    margin-right: 1rem;
+}
+.hide{
+    display: none;
+}
+.hidden{
+    display: block;
+}
+}
