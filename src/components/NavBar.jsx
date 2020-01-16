@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
 import { NavLink as NL } from 'react-router-dom'
 import '../styles/Nav.css'
-
-
-
-
-
+import useWindowSize from '../configs/useWindowSize'
 
 const NavBar = () => {
+    const size = useWindowSize();
     const [open, setOpen] = useState(false)
 
     const shownav = () => {
@@ -22,19 +19,20 @@ const NavBar = () => {
 
 
     return (
-        <div className="mN">
+        <div className={open && size.width < 768 ?"mN full":"mN"}>
             <div className="nLt">
-            <span className="open hide"  onClick={shownav}>Open Nav Container</span>
+            <span className="open nL"  onClick={shownav}>Open Nav Container</span>
+            <p>{size.width}</p>
             </div>
-            <div className={open ? "nCt" : "nCt hidden"}>
+            <div className={!open || size.width > 768 ? "nCt hidden" : "nCt"}>
             <NL className="nL" exact to='/'>Home</NL>
             <NL className="nL" to='#'>About</NL>
             <NL className="nL" to='#'>Developers</NL>
             <NL className="nL" to='#'>Consumers</NL>
             </div>
-            <div className={open ? "nRt" : "nRt hidden"}>
-            <NL className="nL" to='#'>Login</NL>
-            <NL className="nL" to='#'>Register</NL>
+            <div className={!open || size.width > 768 ? "nRt hidden" : "nRt"}>
+            <NL className="nL button" to='#'>Login</NL>
+            <NL className="nL button" to='#'>Register</NL>
             </div>
         </div>
     )

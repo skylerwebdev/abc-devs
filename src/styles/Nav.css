@@ -1,12 +1,34 @@
+/* 
+
+    font-family: 'Fira Code', monospace;
+
+    font-family: 'Roboto', sans-serif;
+
+    font-family: 'Ubuntu', sans-serif;
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+ */
 .mN{
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
+.full{
+    height: 780px;
+}
+
 .nL{
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
-    border-top: 1px solid black;
+    color: #569cd6;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 1px solid #569cd6;
+    padding: .5rem;
+    font-family: 'Fira Code';
+}
+.nL:hover{
+    color:#d7ba7d;
 }
 .nCt, .nRt{
     display: flex;
@@ -19,15 +41,19 @@
     cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-.mN{
-    background-color: rebeccapurple;
+    span{
+        margin-top: -.5rem;
+    }
+    .mN{
     flex-direction: row;
     align-content: center;
     justify-content: center;
+    height: 5rem;
 }
 .nCt, .nRt, .nLt {
     display: flex;
     flex-direction: row;
+    margin-top: 1.7rem;
 }
 .nCt{
     flex-grow: 2;
@@ -41,10 +67,10 @@
     justify-content: flex-end;
 }
 .nLt{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 .nL{
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     border: none;
 }
 .hide{
@@ -53,4 +79,22 @@
 .hidden{
     display: block;
 }
+.button{
+    border: 1px solid black;
+    padding: .5rem;
+    margin-right: 1rem;
+    background-color: #d7ba7d;
+    border-radius: 5px;
+    box-shadow: #d7ba7d 1px 1px;
 }
+.button:hover{
+    background-color: black;
+    box-shadow: none;
+
+}
+.open{
+flex-wrap: nowrap;    
+white-space: nowrap;
+}
+}
+
