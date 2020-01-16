@@ -6,9 +6,17 @@
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
+    border-top: 1px solid black;
+}
+.nCt, .nRt{
+    display: flex;
+    flex-direction: column;
 }
 .hidden{
     display: none;
+}
+.open{
+    cursor: pointer;
 }
 @media screen and (min-width: 768px) {
 .mN{
@@ -37,6 +45,7 @@
 }
 .nL{
     margin-right: 1rem;
+    border: none;
 }
 .hide{
     display: none;
