@@ -17,11 +17,11 @@
     flex-direction: row;
 }
 .ptLt{
-    flex-shrink: 8;
+    flex-grow: 1;
     text-align: left;
 }
 .ptCt{
-    flex-grow: 1;
+    flex-grow: 2;
 }
 .ptRt{
     flex-grow: 1;
@@ -46,6 +46,18 @@
 .pbRt{
     flex-grow: 2;
 }
+.ctrHdr{
+padding: 1rem;
+}
+.homep{
+    text-align: left;
+    padding: .8rem;
+    /* padding-left: 15rem; */
+}
+li{
+    text-align: left;
+}
+
 @media screen and (min-width: 768px){
 
 }
