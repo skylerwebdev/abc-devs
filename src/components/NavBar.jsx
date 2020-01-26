@@ -31,7 +31,7 @@ const NavBar = () => {
             <NL className="nL" to='#'>Consumers</NL>
             </div>
             <div className={!open || size.width > 768 ? "nRt hidden" : "nRt"}>
-            <NL className="nL button" to='#'>Login</NL>
+            <NL className="nL button" to='/login'>Login</NL>
             <NL className="nL button" to='#'>Register</NL>
             </div>
         </div>
