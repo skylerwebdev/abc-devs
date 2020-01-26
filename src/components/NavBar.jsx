@@ -26,7 +26,7 @@ const NavBar = () => {
             </div>
             <div className={!open || size.width > 768 ? "nCt hidden" : "nCt"}>
             <NL className="nL" exact to='/'>Home</NL>
-            <NL className="nL" to='#'>About</NL>
+            <NL className="nL" to='/about'>About</NL>
             <NL className="nL" to='#'>Developers</NL>
             <NL className="nL" to='#'>Consumers</NL>
             </div>
