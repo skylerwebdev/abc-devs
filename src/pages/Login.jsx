@@ -1,17 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Formik } from 'formik';
 import '../styles/Forms.css'
-const Login = () => (
-  <div>
+import axios from 'axios'
+
+const Login = (props) => {
+
+  // const [user, setUser] = useState();
+  return(
+    <div>
     <h1>Welcome Please Login!</h1>
     <Formik
       initialValues={{ username: "", password:"" }}
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
-      }}
+        axios.post('http://localhost:2019/api/login', `grant_type=password&username=${values.username}&password=${values.password}`, {
+          headers:{
+            Authorization : `Basic ${btoa('skyler-client:skyler-secret')}`,
+            'Content-Type' :'application/x-www-form-urlencoded'
+          }
+        }).then(res => {
+          console.log('login success', props )
+            localStorage.setItem('token', res.data.access_token)
+            localStorage.setItem('username', values.username)
+            // setUser(val ues.username)
+            props.history.push('/');   
+          }).catch(err => console.log('login error', err))
+        }}
     >
       {props => (
           <form onSubmit={props.handleSubmit}>
@@ -44,6 +57,6 @@ const Login = () => (
       )}
     </Formik>
   </div>
-);
+)};
 
 export default Login
