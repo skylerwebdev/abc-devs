@@ -19,6 +19,7 @@ const NavBar = () => {
 
 
     return (
+        localStorage.getItem("token") ? (
         <div className={open && size.width < 768 ?"mN full":"mN"}>
             <div className="nLt">
             <span className="open nL"  onClick={shownav}>ABC >= Devs</span>
@@ -27,14 +28,31 @@ const NavBar = () => {
             <div className={!open || size.width > 768 ? "nCt hidden" : "nCt"}>
             <NL className="nL" exact to='/'>Home</NL>
             <NL className="nL" to='/about'>About</NL>
-            <NL className="nL" to='#'>Developers</NL>
-            <NL className="nL" to='#'>Consumers</NL>
+            <NL className="nL" to='/devs'>Developers</NL>
+            <NL className="nL" to='/customers'>Consumers</NL>
             </div>
             <div className={!open || size.width > 768 ? "nRt hidden" : "nRt"}>
-            <NL className="nL button" to='/login'>Login</NL>
+            <NL className="nL button" to='/logout'>Logout</NL>
             <NL className="nL button" to='#'>Register</NL>
             </div>
-        </div>
+        </div>) :
+        (
+            <div className={open && size.width < 768 ?"mN full":"mN"}>
+                <div className="nLt">
+                <span className="open nL"  onClick={shownav}>ABC >= Devs</span>
+                <p>{size.width}</p>
+                </div>
+                <div className={!open || size.width > 768 ? "nCt hidden" : "nCt"}>
+                <NL className="nL" exact to='/'>Home</NL>
+                <NL className="nL" to='/about'>About</NL>
+                <NL className="nL" to='/devs'>Developers</NL>
+            <NL className="nL" to='/customers'>Consumers</NL>
+                </div>
+                <div className={!open || size.width > 768 ? "nRt hidden" : "nRt"}>
+                <NL className="nL button" to='/login'>Login</NL>
+                <NL className="nL button" to='#'>Register</NL>
+                </div>
+            </div>) 
     )
 }
 

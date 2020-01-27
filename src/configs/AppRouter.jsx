@@ -6,6 +6,8 @@ import Hello from '../pages/Hello'
 import About from '../pages/About'
 import Admin from '../pages/Admin'
 import PrivateRoute from './PrivateRoute'
+import Dev from '../pages/Dev'
+import Customer from '../pages/Customer'
 const AppRouter = () => {
     return (
         <div>
@@ -15,6 +17,8 @@ const AppRouter = () => {
             <R path='/hello'>{Hello}</R>
             <R exact path='/login'>{Login}</R>
             <PrivateRoute path='/admin' component={Admin}/>
+            <R path ='/devs'>{Dev}</R>
+            <R path = '/customers'>{Customer}</R>
     </Switch>
         </div>
     )
