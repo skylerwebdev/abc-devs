@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import '../styles/Forms.css'
 import axios from 'axios'
 
-const Login = (props) => {
+const Dev = (props) => {
 
   // const [user, setUser] = useState();
   return(
@@ -12,30 +12,7 @@ const Login = (props) => {
     <Formik
       initialValues={{ username: "", password:"" }}
       onSubmit={(values, actions) => {
-        axios.post('http://localhost:2019/api/login', `grant_type=password&username=${values.username}&password=${values.password}`, {
-          headers:{
-            Authorization : `Basic ${btoa('skyler-client:skyler-secret')}`,
-            'Content-Type' :'application/x-www-form-urlencoded'
-          }
-        }).then(res => {
-          console.log('login success', res )
-            localStorage.setItem('token', res.data.access_token)
-            localStorage.setItem('username', values.username)
-            axios.get(`http://localhost:2019/api/users/name/${values.username}`,{
-              headers:{
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${res.data.access_token}`
-              }
-            })
-            .then(res => {
-              console.log('user',res)
-              if (res.data.userroles[0].role.name === 'ADMIN'){
-               props.history.push('/admin')
-              } else{
-                props.history.push('/')
-              }
-            }).catch(err => console.log('login error', err))
-          }).catch(err => console.log('login error', err))
+       
         }}
     >
       {props => (
@@ -71,4 +48,4 @@ const Login = (props) => {
   </div>
 )};
 
-export default Login
+export default Dev
