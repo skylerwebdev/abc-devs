@@ -7,7 +7,7 @@ export const axiosWithAuth = () => {
         baseURL: 'localhost:2019/api',
         headers:{
             'Content-Type': 'application/json',
-            'Authorization': token
+            Authorization: `Bearer ${token}`
         }
     })
 }

@@ -18,11 +18,23 @@ const Login = (props) => {
             'Content-Type' :'application/x-www-form-urlencoded'
           }
         }).then(res => {
-          console.log('login success', props )
+          console.log('login success', res )
             localStorage.setItem('token', res.data.access_token)
             localStorage.setItem('username', values.username)
-            // setUser(val ues.username)
-            props.history.push('/');   
+            axios.get(`http://localhost:2019/api/users/name/${values.username}`,{
+              headers:{
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${res.data.access_token}`
+              }
+            })
+            .then(res => {
+              console.log('user',res)
+              if (res.data.userroles[0].role.name === 'ADMIN'){
+               props.history.push('/admin')
+              } else{
+                props.history.push('/')
+              }
+            }).catch(err => console.log('login error', err))
           }).catch(err => console.log('login error', err))
         }}
     >
